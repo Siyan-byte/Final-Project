@@ -1,0 +1,10 @@
+Things need to be done:
+
+√ 1.add the text by AR myself successfully
+√ 2.client send the message to the server
+3.server stored the message and send it back to all the clients by AR
+
+
+Problems:
+1.how to change the QR pattern to a personalized one? 
+2.how to send the message back to all the clients by AR?
