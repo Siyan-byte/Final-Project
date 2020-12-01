@@ -29,11 +29,25 @@ window.addEventListener('load',()=> {
         .then(data => {
             document.getElementById('comments-info').innerHTML = '';
             console.log(data.data);
+            // for(let i=0;i<data.data.length;i++) {
+            //     let string = data.data[i].date + " : " + data.data[i].comments;
+            //     let elt = document.createElement('p');
+
+
+            //     elt.innerHTML = string;
+
+            //     document.getElementById('comments-info').appendChild(elt);
+            // }
             for(let i=0;i<data.data.length;i++) {
-                let string = data.data[i].date + " : " + data.data[i].comments;
-                let elt = document.createElement('p');
-                elt.innerHTML = string;
-                document.getElementById('comments-info').appendChild(elt);
-            }
+                let textElt = document.createElement('a-text');
+                textElt.setAttribute('value', data.data[i].comments);
+                textElt.setAttribute('position', "0,1,0");
+                console.log(document.getElementById('scene'))
+                document.getElementById('scene').prepend(textElt);
+              }
         })
     })
+
+
+
+  

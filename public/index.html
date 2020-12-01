@@ -20,13 +20,15 @@
 
 
 <body>
-  <a-scene embedded arjs>
+  <a-scene id="scene" embedded arjs>
+  
     <a-text position="0 1 0" rotation="0 0 0" value="I win my first prize here!"></a-text>
     <a-text position="-3 -2 0" rotation="0 0 0" value="Nice window~"></a-text>
     <a-text position="3 3 0" rotation="0 0 0" value="Looking forward to come back again"></a-text>
     <a-text position="3 -2 0" rotation="0 0 0" value="I meet her first time ：）"></a-text>
     <a-text position="-3 2 0" rotation="0 0 0" value="It is my first day to go to university~"></a-text>
-
+  
+    
     <!-- create your content here. just a box for now -->
     <a-box position='0 0.5 0' material='opacity: 0.9;'></a-box>
    
@@ -53,6 +55,7 @@
   <!-- <a-entity gltf-model="##model"></a-entity> -->
 
 
+
 <div class="container">
  
   <div class="chat-header">Text your comments here~</div>
@@ -63,7 +66,7 @@
       <input type="text" class="chat-input-msg" id="msg-input" placeholder="Message" />
       <button id="send-button">Send</button>
   </div>
-<div id="comments-info"></div>
+  <div id="comments-info"></div>
 </div>
 
 <script src="app.js"></script>
