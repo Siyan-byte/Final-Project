@@ -9,17 +9,6 @@ let Datastore = require('nedb');
 let db = new Datastore('comments.db');
 db.loadDatabase();
 
-
-
-// //Initialize the actual HTTP server
-// let http = require('http');
-// let server = http.createServer(app);
-// let port = process.env.PORT || 3000;
-// server.listen(port, () => {
-//     console.log("Server listening at port: " + port);
-// });
-
-
 let commentsTracker = [];
 
 // add a route on server, that is listening for a post request
@@ -30,22 +19,21 @@ app.post('/comments', (req, res)=> {
         date: currentDate,
         comments: req.body.Text
     }
-    //insert comments data into the database
+
+//insert comments data into the database
     db.insert(obj,(err, newDocs)=>{
         if(err) {
-            res.json({task: "task failed"});
+            res.json({task: "task failed"}); 
         } else {
             res.json({task:"success"});
         }
-
     })
-
 })
 
 // search the folder called "public"，and then serves all the content in it
 app.use('/', express.static('public'));
 
-//add route to get all comments track information
+//get information from the data base and send it to client side
 app.get('/getcomments', (req,res)=> {
 
     db.find({}, (err, docs)=> {
@@ -55,9 +43,7 @@ app.get('/getcomments', (req,res)=> {
             let obj = {data: docs};
             res.json(obj);
         }
-
     })
-
 })
 
 //listen at port 5000

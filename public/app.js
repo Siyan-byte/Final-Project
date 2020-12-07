@@ -1,3 +1,6 @@
+let min=-3;
+let max=3;
+
 window.addEventListener('load',()=> {
     document.getElementById('send-button').addEventListener('click', ()=> {
         let comments = document.getElementById('msg-input').value;
@@ -20,7 +23,7 @@ window.addEventListener('load',()=> {
         .then(response => response.json())
         .then(data => {console.log(data)});
 
-        //1. make a fetch request of type POST so that we can send the (comments) info to the server
+       
     })
 
       //get info on ALL the comments we've had so far from server
@@ -29,19 +32,18 @@ window.addEventListener('load',()=> {
         .then(data => {
             document.getElementById('comments-info').innerHTML = '';
             console.log(data.data);
-            // for(let i=0;i<data.data.length;i++) {
-            //     let string = data.data[i].date + " : " + data.data[i].comments;
-            //     let elt = document.createElement('p');
-
-
-            //     elt.innerHTML = string;
-
-            //     document.getElementById('comments-info').appendChild(elt);
-            // }
+            
             for(let i=0;i<data.data.length;i++) {
                 let textElt = document.createElement('a-text');
                 textElt.setAttribute('value', data.data[i].comments);
-                textElt.setAttribute('position', "0,1,0");
+                // textElt.setAttribute('position', "0,1,0");
+                
+                function getRandomArbitrary(min, max) {
+                    return Math.random() * (max - min) + min;
+                  }
+                  
+                textElt.setAttribute('position', {x: console.log(getRandomArbitrary(min, max)), y: console.log(getRandomArbitrary(min, max)), z: console.log(getRandomArbitrary(min, max))});
+                
                 console.log(document.getElementById('scene'))
                 document.getElementById('scene').prepend(textElt);
               }
