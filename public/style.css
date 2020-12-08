@@ -1,0 +1,23 @@
+.send-button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-family: 'Enriqueta', arial, serif; 
+    font-size: 40px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .chat-header{
+    font-family: 'Enriqueta', arial, serif; 
+    line-height: 1.25; 
+    margin: 0 0 10px; 
+    font-size: 25px; 
+    font-weight: bold;
+  }

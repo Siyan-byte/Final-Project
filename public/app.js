@@ -1,5 +1,5 @@
-let min=-3;
-let max=3;
+let min=-2;
+let max=2;
 
 window.addEventListener('load',()=> {
     document.getElementById('send-button').addEventListener('click', ()=> {
@@ -42,7 +42,10 @@ window.addEventListener('load',()=> {
                     return Math.random() * (max - min) + min;
                   }
                   
-                textElt.setAttribute('position', {x: console.log(getRandomArbitrary(min, max)), y: console.log(getRandomArbitrary(min, max)), z: console.log(getRandomArbitrary(min, max))});
+                textElt.setAttribute('position', {
+                    x: getRandomArbitrary(min, max), 
+                    y: getRandomArbitrary(min, max), 
+                    z: getRandomArbitrary(min, max)});
                 
                 console.log(document.getElementById('scene'))
                 document.getElementById('scene').prepend(textElt);
